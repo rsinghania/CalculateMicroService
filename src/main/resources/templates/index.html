@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Calculator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div>
+			<h2>Calculate</h2>
+			<form action="#" role="form" th:action="@{/addNumbers}" th:object="${inputNumbers}"
+				method="post">
+				
+				<div class="form-group">
+					<label for="first_number">First Number:</label> 
+					<input type="text"	class="form-control" th:field="*{firstNumber}"/>
+				</div>
+				<div class="form-group">
+					<label for="second_number">Second Number:</label> 
+					<input	type="text" class="form-control" th:field="*{secondNumber}" />
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+
+		<div>
+			<h2>Result</h2>
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td th:text="${sum}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
